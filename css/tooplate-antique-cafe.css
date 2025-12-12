@@ -883,17 +883,26 @@ select.form-select option:hover {
 */
 
 
+/* Фон для ПК */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/background_header_0_1_desktop.jpg') center/cover no-repeat;
+    z-index: -1;
+}
 
-
-
-
-/* статичный фон на весь сайт. Кирпичи */
-body {
-    background-image: url('../img/background_header_0.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* чтобы фон был статичен */
-    background-repeat: no-repeat;
+/* Фон для мобильных устройств */
+@media (max-width: 768px) {
+    body::before {
+        background-image: url('../img/background_header_0_1_mobile.jpg');
+        background-attachment: scroll;    /* чтобы не скроллило странно */
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 
@@ -960,3 +969,12 @@ body {
 
 
 
+#contactForm {
+    border-radius: 12px !important;
+}
+
+
+
+.bg-opacity-80 {
+    --tw-bg-opacity: 0.88 !important;
+}
